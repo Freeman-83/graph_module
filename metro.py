@@ -1,21 +1,20 @@
-from routing_module.utils import find_path
-from routing_module.classes import Node, Link, Graph
+from routing_module.base_classes import Node, Link, Graph
 
 
 class Station(Node):
-    pass
+    ...
 
 
 class LinkMetro(Link):
-    pass
+    ...
 
 
 class TransferStation(Link):
-    pass
+    ...
 
 
 class MetroGraph(Graph):
-    pass
+    ...
 
 
 map_metro = MetroGraph()
@@ -434,6 +433,6 @@ map_metro.add_link(TransferStation(v137, v58, 2))
 
 print(len(map_metro._links))
 print(len(map_metro._nodes))
-path = find_path(map_metro.links, v29, v38)
+path = map_metro.find_path(v137, v58)
 
 print(path)
