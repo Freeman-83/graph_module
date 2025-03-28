@@ -81,7 +81,7 @@ map_metro.add_link(Link(v4, v5, 1))
 map_metro.add_link(Link(v6, v7, 1))
 
 map_metro.add_link(Link(v2, v7, 5))
-# map_metro.add_link(Link(v3, v4, 3))
+map_metro.add_link(Link(v3, v4, 3))
 map_metro.add_link(Link(v5, v6, 3))
 
 
