@@ -110,7 +110,6 @@ class Graph:
 
         while next_node:
             result_nodes_list.append(next_node)
-            print(next_node.name)
             next_node = parents.get(next_node)
         
         result_nodes_list.reverse()

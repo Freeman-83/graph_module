@@ -37,10 +37,8 @@ map1.add_link(Link(v2, v1))
 assert len(map1._links) == 5, "метод add_link() добавил связь Link(v2, v1), хотя уже имеется связь Link(v1, v2)"
 
 path = map1.find_path(v1, v5)
-print(path)
 
 s = path[1]
-print(s)
 assert s == 3, "неверная суммарная длина маршрута, возможно, некорректно работает объект-свойство cost"
 
 assert issubclass(Station, Node), "класс Station должен наследоваться от класса Vertex"
@@ -83,13 +81,9 @@ map_metro.add_link(Link(v4, v5, 1))
 map_metro.add_link(Link(v6, v7, 1))
 
 map_metro.add_link(Link(v2, v7, 5))
-map_metro.add_link(Link(v3, v4, 3))
+# map_metro.add_link(Link(v3, v4, 3))
 map_metro.add_link(Link(v5, v6, 3))
 
 
-print(len(map_metro._links))
-print(len(map_metro._nodes))
-
-path = map_metro.find_path(v6, v1)  # от сретенского бульвара до китай-город 1
+path = map_metro.find_path(v1, v6)  # от сретенского бульвара до китай-город 1
 print(path[0], path[1])    # [Сретенский бульвар, Тургеневская, Китай-город 2, Китай-город 1]
-# print(sum([x.dist for x in path[1]]))  # 7
