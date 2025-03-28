@@ -431,8 +431,8 @@ map_metro.add_link(TransferStation(v137, v58, 2))
 map_metro.add_link(TransferStation(v137, v58, 2))
 
 
-print(len(map_metro._links))
-print(len(map_metro._nodes))
-path = map_metro.find_path(v137, v58)
+# print(len(map_metro._links))
+# print(len(map_metro._nodes))
+# path = map_metro.find_path(v137, v58)
 
-print(path)
+# print(path)

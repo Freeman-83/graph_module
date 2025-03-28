@@ -63,7 +63,6 @@ assert len(map2._links) == 5, "неверное число связей в сп�
 assert len(map2._nodes) == 5, "неверное число вершин в списке _nodes класса LinkedGraph"
 
 path = map2.find_path(v1, v5)
-print(path)
 
 
 map_metro = MetroGraph()
@@ -87,8 +86,10 @@ map_metro.add_link(Link(v2, v7, 5))
 map_metro.add_link(Link(v3, v4, 3))
 map_metro.add_link(Link(v5, v6, 3))
 
+
 print(len(map_metro._links))
 print(len(map_metro._nodes))
-path = map_metro.find_path(v1, v6)  # от сретенского бульвара до китай-город 1
+
+path = map_metro.find_path(v6, v1)  # от сретенского бульвара до китай-город 1
 print(path[0], path[1])    # [Сретенский бульвар, Тургеневская, Китай-город 2, Китай-город 1]
 # print(sum([x.dist for x in path[1]]))  # 7

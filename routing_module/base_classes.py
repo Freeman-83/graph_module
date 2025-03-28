@@ -37,9 +37,13 @@ class Graph:
     def links(self):
         return self._links
     
+    @property
+    def nodes(self):
+        return self._nodes
+    
     def add_node(self, node: Node):
         if node not in self._nodes:
-            self.self._nodes.append(node)
+            self._nodes.append(node)
 
     def add_link(self, link):
         if link not in self._links:
@@ -50,16 +54,19 @@ class Graph:
             self._nodes.append(link.node_2)
 
     @staticmethod
-    def get_graph_data(links):
+    def get_graph_data(links: list[Link]):
         """Функция постороения графа маршрута."""
+
         graph = {}
+
         for link in links:
             graph.setdefault(link.node_1, {}).update({link.node_2: link.cost})
-        
+            graph.setdefault(link.node_2, {}).update({link.node_1: link.cost})
+
         return graph
 
     @staticmethod
-    def find_lowest_cost_node(nodes, processed):
+    def find_lowest_cost_node(nodes: dict, processed: list[Node]):
         """Функция поиска узла с наименьшим весом."""
 
         lowest_cost = float('inf')
@@ -72,7 +79,7 @@ class Graph:
         return lowest_cost_node
 
 
-    def find_path(self, start_node, end_node):
+    def find_path(self, start_node: Node, end_node: Node):
         """Функция построения кратчайшего маршрута."""
 
         processed = []
@@ -103,6 +110,7 @@ class Graph:
 
         while next_node:
             result_nodes_list.append(next_node)
+            print(next_node.name)
             next_node = parents.get(next_node)
         
         result_nodes_list.reverse()
